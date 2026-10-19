@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+/* Beyond Vibing lighthouse system. Every colour is sampled from the wordmark.
+   Source: groxio HQ, docs/products/beyond-vibing-academy/brand/ */
+@theme static {
+  --color-water: #00303A;    /* lettering, dark surfaces (dark first) */
+  --color-water-2: #0A3C46;  /* raised surface on water */
+  --color-beam: #FCC418;     /* the beam: never change it */
+  --color-tower: #557A70;    /* the lighthouse */
+  --color-tower-light: #A3C4B9; /* tower on dark surfaces */
+  --color-paper: #F7F5EE;
+  --color-line: #D8DDD8;
+  --color-line-dark: #1C4C55;
+  --color-muted: #4A5F5E;
+  --color-muted-on-water: #DCE4E0;
+  --color-label-on-water: #9DB8B0;
+
+  --font-display: "Archivo", "Arial Black", Arial, sans-serif;
+  --font-body: "Inter", Arial, Helvetica, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-paper text-water font-body antialiased; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

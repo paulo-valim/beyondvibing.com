@@ -1,0 +1,55 @@
+---
+import { academy as copy } from '../content/academy';
+const webhook = import.meta.env.PUBLIC_RESERVE_WEBHOOK_URL || '';
+const disconnected = !webhook && import.meta.env.DEV;
+---
+<form id="reservation-form" data-webhook={webhook} data-disconnected={disconnected} data-sending={copy.form.sending} data-success={copy.form.success} data-error={copy.form.error} data-idle={copy.primary}>
+  <div class="field-row">
+    <div class="field"><label for="reserve-name">{copy.form.name} <span>{copy.form.required}</span></label><input id="reserve-name" name="name" autocomplete="name" required /></div>
+    <div class="field"><label for="reserve-email">{copy.form.email} <span>{copy.form.required}</span></label><input id="reserve-email" name="email" type="email" autocomplete="email" required /></div>
+  </div>
+  <div class="field"><label for="reserve-building">{copy.form.building} <span>{copy.form.optional}</span></label><textarea id="reserve-building" name="building" rows="3"></textarea></div>
+  <div class="honeypot" aria-hidden="true"><label for="reserve-company">{copy.form.company}</label><input id="reserve-company" name="company" tabindex="-1" autocomplete="off" /></div>
+  <label class="check-label"><input type="checkbox" name="newsletter" value="yes" /><span>{copy.form.newsletter}</span></label>
+  <button class="primary" type="submit">{copy.primary}</button>
+  <p class="form-status" role="status" aria-live="polite" aria-atomic="true">{disconnected ? copy.form.disconnected : '\u00a0'}</p>
+</form>
+<script>
+  const form = document.querySelector<HTMLFormElement>('#reservation-form');
+  if (form) {
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const status = form.querySelector<HTMLElement>('.form-status')!;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (button.disabled || !form.reportValidity()) return;
+      const data = new FormData(form);
+      if (data.get('company')) return;
+      const endpoint = form.dataset.webhook;
+      if (!endpoint) {
+        status.textContent = form.dataset.disconnected === 'true' ? status.textContent : form.dataset.error!;
+        return;
+      }
+      button.disabled = true;
+      button.textContent = form.dataset.sending!;
+      form.setAttribute('aria-busy', 'true');
+      status.textContent = '\u00a0';
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: data.get('name'), email: data.get('email'), building: data.get('building'), newsletter: data.get('newsletter') === 'yes', company: data.get('company') }),
+          signal: AbortSignal.timeout(15000),
+        });
+        if (!response.ok) throw new Error('Reservation failed');
+        status.textContent = form.dataset.success!;
+        form.reset();
+      } catch {
+        status.textContent = form.dataset.error!;
+        button.disabled = false;
+      } finally {
+        button.textContent = form.dataset.idle!;
+        form.removeAttribute('aria-busy');
+      }
+    });
+  }
+</script>

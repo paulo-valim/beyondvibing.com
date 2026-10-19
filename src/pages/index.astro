@@ -1,0 +1,148 @@
+---
+// Academy sales page, look G (Night and board), chosen by Bruce on Oct 19 (groxio HQ, BV-12).
+import Layout from "../layouts/Layout.astro";
+import ReserveForm from "../components/ReserveForm.astro";
+import logo from "../images/logo-reversed.png";
+import "../styles/academy.css";
+---
+
+<Layout title="Beyond Vibing Academy · Intelligence with intention." description="A live course in agentic coding for developers and technical founders, by Groxio. The agent writes the code. You learn to make the calls that matter.">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="/" aria-label="Beyond Vibing Academy, by Groxio"><img class="logo" src={logo.src} alt="Beyond Vibing" width="150" height="60"><span class="by" aria-hidden="true">by&nbsp;<b>Groxio</b></span></a>
+  <nav><a class="navlink" href="#course">The course</a><a class="btn btn-beam" href="#start">Ways to start</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero"><div class="wrap hero-in">
+  <div class="hero-copy">
+    <h1>Intelligence with intention.</h1>
+    <p class="lede">A live course in agentic coding for developers and technical founders. The agent writes the code. You learn to make the calls that matter.</p>
+    <div class="actions"><a class="btn btn-beam" href="#start">See how to start</a><a class="btn btn-line" href="#course">What you will learn</a></div>
+  </div>
+  <figure class="log" aria-label="An example agent session with two human decisions">
+    <div class="log-head"><span>session: partial-refunds</span><span>example</span></div>
+    <ol>
+      <li><b>scout</b><span>read billing context: 3 modules, 41 tests</span></li>
+      <li><b>plan</b><span>agent proposes a new RefundService with its own retry loop</span></li>
+      <li class="human"><b>you</b><span><mark>rejected. Refunds belong in Billing; retries already live in the job queue.</mark></span></li>
+      <li><b>build</b><span>agent revises the plan, 6 files changed</span></li>
+      <li><b>verify</b><span>unit tests <i class="ok">pass</i> · property test <i class="bad">fails</i> on rounding</span></li>
+      <li><b>build</b><span>fix: round once, at the boundary</span></li>
+      <li class="human"><b>you</b><span><mark>read the diff, can explain it at a whiteboard. Approved.</mark></span></li>
+      <li><b>review</b><span>pull request merged by a person</span></li>
+    </ol>
+    <figcaption>The agent wrote the code. You made the two calls that mattered. That is what we teach.</figcaption>
+  </figure>
+</div></section>
+
+<section class="why band-1 board"><div class="wrap why-in">
+  <div class="why-copy">
+    <h2>Vibing is agentic coding without guidance.</h2>
+    <p>It ships fast, and the cost shows up later: code nobody can explain, reviews that turn into triage, systems that resist every change.</p>
+    <p>The agents are not the problem. Working without judgment is. We teach the other way.</p>
+  </div>
+  <div class="loop">
+    <svg class="draw" data-reveal viewBox="0 0 540 170" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" font-family="JetBrains Mono, monospace" font-size="13">
+<g stroke="#2457C5" stroke-width="2.4">
+<rect pathLength="1" x="6" y="58" width="78" height="40" rx="6"/><rect pathLength="1" x="108" y="58" width="78" height="40" rx="6"/>
+<rect pathLength="1" x="210" y="58" width="78" height="40" rx="6"/><rect pathLength="1" x="312" y="58" width="78" height="40" rx="6"/>
+<rect pathLength="1" x="414" y="58" width="96" height="40" rx="6"/>
+<path pathLength="1" d="M86 78h18M188 78h18M290 78h18M392 78h18"/><path pathLength="1" d="M100 73l5 5-5 5M202 73l5 5-5 5M304 73l5 5-5 5M406 73l5 5-5 5"/>
+<path pathLength="1" class="late" d="M462 102c0 40-40 52-200 52S48 142 46 104"/><path pathLength="1" class="late" d="M40 110l6-7 6 8"/></g>
+<ellipse pathLength="1" class="late" cx="462" cy="78" rx="66" ry="34" stroke="#D23F2C" stroke-width="2.6"/>
+<g fill="#122A30" stroke="none"><text x="22" y="83">scout</text><text x="130" y="83">plan</text><text x="230" y="83">build</text><text x="328" y="83">verify</text><text x="434" y="83">review</text></g>
+<text x="528" y="28" fill="#D23F2C" stroke="none" text-anchor="end">a person decides</text>
+<text x="200" y="166" fill="#2457C5" stroke="none" font-size="12">every module, every change</text>
+</svg>
+    <ol class="steps">
+      <li><b>Scout</b><span>Read the code and the context first.</span></li>
+      <li><b>Plan</b><span>Agree on the change before any code.</span></li>
+      <li><b>Build</b><span>The agent writes it.</span></li>
+      <li><b>Verify</b><span>Run the checks, cheapest first.</span></li>
+      <li class="person"><b>Review</b><span>A person reads it and merges it.</span></li>
+    </ol>
+    <p class="loop-note">The same loop in every module. People approve the plan and review the change, including the automated ones.</p>
+  </div>
+</div></section>
+
+<section class="course band-2" id="course"><div class="wrap">
+  <h2>Four modules, sold together, taught live.</h2>
+  
+  <div class="mods">
+    <article class="mod"><p class="mod-n">Module 1 · Coding</p><svg viewBox="0 0 200 96" fill="none" stroke="#FCC418" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="8" y="8" width="62" height="18" rx="3"/><rect x="8" y="32" width="62" height="18" rx="3"/><rect x="8" y="56" width="62" height="18" rx="3"/><path d="M80 41h30M104 35l6 6-6 6" stroke="#9DB8B0"/><rect x="120" y="18" width="70" height="46" rx="6"/><path d="M132 34h46M132 46h30" stroke="#9DB8B0"/><text x="8" y="92" font-family="JetBrains Mono, monospace" font-size="10" fill="#9DB8B0" stroke="none">stories → context</text></svg><h3>Specify the work.</h3><p>Turn a request into small, well-specified stories and the context an agent needs. Explain why a failed attempt failed.</p></article>
+    <article class="mod"><p class="mod-n">Module 2 · Steered coding</p><svg viewBox="0 0 200 96" fill="none" stroke="#FCC418" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="10" y="10" width="50" height="30" rx="3"/><rect x="74" y="10" width="50" height="30" rx="3"/><rect x="138" y="10" width="50" height="30" rx="3" stroke="#9DB8B0" stroke-dasharray="4 5"/><path d="M146 18l34 14M180 18l-34 14" stroke="#F19A8A"/><rect x="42" y="52" width="50" height="22" rx="3"/><path d="M35 40l20 12M99 40l-20 12" stroke="#9DB8B0"/><text x="8" y="92" font-family="JetBrains Mono, monospace" font-size="10" fill="#9DB8B0" stroke="none">keep what fits, discard the rest</text></svg><h3>Judge what comes back.</h3><p>Judge agent output against design principles, discard what does not fit, and explain how the remaining system works.</p></article>
+    <article class="mod"><p class="mod-n">Module 3 · Verified coding</p><svg viewBox="0 0 200 96" fill="none" stroke="#FCC418" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 44h188" stroke="#9DB8B0"/><rect x="34" y="34" width="14" height="20" rx="2"/><rect x="88" y="26" width="14" height="36" rx="2"/><rect x="142" y="16" width="14" height="56" rx="2"/><path d="M180 38l8 6-8 6" stroke="#9DB8B0"/><text x="8" y="92" font-family="JetBrains Mono, monospace" font-size="10" fill="#9DB8B0" stroke="none">gates, cheapest first</text></svg><h3>Prove it works.</h3><p>Put verification gates in place in order of cost. Recognize common AI-generated failures and catch them before review.</p></article>
+    <article class="mod"><p class="mod-n">Module 4 · Automated coding</p><svg viewBox="0 0 200 96" fill="none" stroke="#FCC418" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="8" y="22" width="70" height="40" rx="6"/><path d="M30 42a12 12 0 1 1 12 12"/><path d="M38 50l4 4-4 4"/><path d="M86 42h30M110 36l6 6-6 6" stroke="#9DB8B0"/><rect x="124" y="22" width="68" height="40" rx="6"/><circle cx="158" cy="36" r="6"/><path d="M146 56c0-8 5-12 12-12s12 4 12 12"/><text x="8" y="92" font-family="JetBrains Mono, monospace" font-size="10" fill="#9DB8B0" stroke="none">automation → a person merges</text></svg><h3>Automate what has earned it.</h3><p>Run selected automations with clear rules for adding or reducing them. People still review changes and merge pull requests.</p></article>
+  </div>
+</div></section>
+
+<section class="test band-3 board"><div class="wrap test-in">
+  <h2>Can you explain it at a whiteboard?</h2>
+  <p>Every module ends the same way: you stand at a whiteboard and explain how the system works, why it is shaped that way, and where it would fail. Not line by line. Decision by decision. If you can do that, you can ship what the agent helped you build.</p>
+</div></section>
+
+<section class="who band-4"><div class="wrap">
+  <h2>Who it is for</h2>
+  <div class="who-grid">
+    <div><p class="k">Developers, early in the career</p><h3>Learn the judgment AI skipped.</h3><p>Deciding what to ask for, knowing whether the answer is any good, and holding the shape of the system. The job moved up the stack; the learning has to move with it.</p></div>
+    <div><p class="k">Senior developers</p><h3>Keep your craft, not just triage.</h3><p>Put your design judgment where the agent can use it: contracts, boundaries, checks and reviews small enough to read.</p></div>
+    <div><p class="k">Technical founders</p><h3>Build a system that serves the business.</h3><p>Use agents for speed without losing the architecture, and keep the product tied to the business it has to run.</p></div>
+  </div>
+  <p class="notfor"><b>Not for</b> people who have never written software. You need to build something today; we teach you to build it with judgment.</p>
+</div></section>
+
+<section class="people band-5 board"><div class="wrap people-in">
+  <blockquote><p>“Vibing is not coding. Coding is the judgment around the generation: the architecture you hold, the review you don't skip, the thing you throw away because you can see it doesn't fit.”</p><cite>Bruce Tate, from the foreword to his essays</cite></blockquote>
+  <div class="teachers">
+    <div class="person"><h3>Bruce Tate</h3><p class="k">Technical teaching</p><p>Founder of Groxio and one of Elixir's most published authors. Leads the technical curriculum: directing, judging and verifying AI-assisted work.</p></div>
+    <div class="person"><h3>Paulo Valim</h3><p class="k">Business, context and product</p><p>Teaches context, stories and verification, so what you build can be put to work and kept running.</p></div>
+  </div>
+</div></section>
+
+<section class="start band-6" id="start"><div class="wrap">
+  <h2>Ways to start</h2>
+  <div class="ways">
+    <article class="way main-way">
+      <h3>Join the founding cohort</h3>
+      <p>Live, four months, starting January 2027, with weekly sessions. A small group: it runs with at least 6 people.</p>
+      <p class="price">US$2,000 <s>US$2,500</s></p>
+      <p>Founding price. Reserving costs nothing: if the cohort runs, we confirm by December 11 and send the invoice. If not, nobody pays.</p>
+      <a class="btn btn-beam" href="#reserve">Reserve a founding seat</a>
+    </article>
+    <article class="way">
+      <h3>See how we teach</h3>
+      <p>Join the free live every two weeks, where Bruce walks through a real agent conversation on screen.</p>
+      <a class="btn btn-line" href="https://grox.io/live">Join the free live</a>
+    </article>
+  </div>
+</div></section>
+
+<section class="end band-7"><div class="wrap end-in">
+  <div>
+    <h2>Questions</h2>
+    <details><summary>When do I pay?</summary><p>After December 11, and only if the cohort runs. Reserving is free.</p></details>
+    <details><summary>What if fewer than 6 people join?</summary><p>The cohort doesn't run, and you pay nothing. You'll hear from us by December 11 either way.</p></details>
+    <details><summary>Can I buy one module?</summary><p>No. The four modules build on each other, so they are sold together.</p></details>
+    <details><summary>Is there a free way to see how you teach?</summary><p>Yes. Join the <a href="https://grox.io/live">free live</a> every two weeks.</p></details>
+  </div>
+  <div id="reserve">
+    <h2>Reserve a founding seat</h2>
+    <p class="sub">No payment now. We'll write to you by December 11.</p>
+    <ReserveForm />
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot">
+  <img class="logo" src={logo.src} alt="Beyond Vibing" width="130" height="52">
+  <span>Beyond Vibing Academy is a Groxio product. <a href="https://grox.io">grox.io</a></span>
+</div></footer>
+<script is:inline>
+// One reveal per element: anything marked data-reveal gets .in when it scrolls into view.
+(function(){var els=document.querySelectorAll('[data-reveal]');
+if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.35});
+els.forEach(function(e){io.observe(e)})})();
+</script>
+</Layout>
