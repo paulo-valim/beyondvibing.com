@@ -26,6 +26,8 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
+  # n8n workflow "BV · Reserve a founding seat": emails Maggie, forwards to groxio-leads (MailerLite)
+  PUBLIC_RESERVE_WEBHOOK_URL: "https://auto.cienciaemacao.com.br/webhook/bv-reserve"
   # BUILD_PATH: subfolder
 
 jobs:
