@@ -115,7 +115,12 @@ textarea{min-height:96px;resize:vertical}
 .course .mod-n{color:#9DB8B0}.course .mod p{color:var(--soft)}
 .mod svg{width:100%;max-width:200px;height:auto;margin:0 0 18px;display:block}
 .test{border-top:6px solid var(--blue)}
-.test h2::after{content:"";display:block;width:4.2em;height:.12em;margin-top:.25em;background:var(--red);border-radius:2px;transform:rotate(-1.2deg)}
+.test h2::after{
+  content:"";display:block;width:6em;max-width:100%;height:.12em;margin-top:.25em;
+  background:var(--red);transform:rotate(-2deg);transform-origin:left center;
+  /* A straight pen stroke with subtle pressure variation along its edges. */
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 10' preserveAspectRatio='none'%3E%3Cpath d='M1 5 Q7 2.5 19 2.5 C85 2 118 3 175 2.5 S275 2 330 2.5 Q377 2 399 4.5 Q385 6.5 365 6.5 C300 7 249 6.5 195 7 S88 6.5 33 7 Q10 7 1 5Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+}
 .who .k{color:#9DB8B0}.who p{color:var(--soft)}.notfor{color:var(--soft)}.notfor b{color:var(--ink)}
 .people .k{color:var(--blue)}.people cite{color:var(--red)}
 .way{background:#05252D;border:1px solid var(--rule)}
